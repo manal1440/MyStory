@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         connectView()
         login()
-        checkFields()
+        //checkFields()
     }
     private fun connectView(){
         editTextUsername = findViewById(R.id.etUserId)
@@ -45,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
                         finish()
                    // Toast.makeText(this,"Welcome ${user.email}",Toast.LENGTH_LONG).show()
                     val i = Intent (this,MainActivity::class.java)
-                    i.putExtra("email",userArray.email)
+                    i.putExtra("email",user.email)
                     startActivity(i)
                     break
                 }else{
@@ -56,14 +56,14 @@ class LoginActivity : AppCompatActivity() {
 
 
     }
-    private fun checkFields(){
-        buttonLogin?.setOnClickListener {
-            if (editTextUsername?.text?.isEmpty() == true) {
-                editTextUsername?.error="Enter your email"
-
-            }else if(editTextPassword?.text?.isEmpty()== true){
-                editTextPassword?.error="Enter your password"
-            }
-        }
-    }
+//    private fun checkFields(){
+//        buttonLogin?.setOnClickListener {
+//            if (editTextUsername?.text?.isEmpty() == true) {
+//                editTextUsername?.error="Enter your email"
+//
+//            }else if(editTextPassword?.text?.isEmpty()== true){
+//                editTextPassword?.error="Enter your password"
+//            }
+//        }
+//    }
 }
